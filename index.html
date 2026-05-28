@@ -1,45 +1,304 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hola Mundo</title>
+    <title>Git for Beginners</title>
     <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
       body {
-        margin: 0;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         background: #0f172a;
-        font-family: sans-serif;
-        color: #f8fafc;
+        color: #e2e8f0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.7;
+        padding: 2rem 1rem;
       }
 
-      .card {
+      .container {
+        max-width: 760px;
+        margin: 0 auto;
+      }
+
+      header {
         text-align: center;
-        padding: 3rem 4rem;
-        background: #1e293b;
-        border-radius: 1.5rem;
-        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+        margin-bottom: 3rem;
       }
 
-      h1 {
-        font-size: 3rem;
-        margin: 0 0 1rem;
+      header h1 {
+        font-size: 2.5rem;
+        color: #f8fafc;
+        margin-bottom: 0.5rem;
       }
 
-      p {
-        font-size: 1.25rem;
+      header p {
         color: #94a3b8;
-        margin: 0;
+        font-size: 1.1rem;
+      }
+
+      .step {
+        background: #1e293b;
+        border-radius: 1rem;
+        padding: 1.75rem 2rem;
+        margin-bottom: 1.5rem;
+        border-left: 4px solid #6366f1;
+      }
+
+      .step-number {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #6366f1;
+        margin-bottom: 0.4rem;
+      }
+
+      .step h2 {
+        font-size: 1.3rem;
+        color: #f1f5f9;
+        margin-bottom: 0.75rem;
+      }
+
+      .step p {
+        color: #94a3b8;
+        margin-bottom: 1rem;
+      }
+
+      .step p:last-child {
+        margin-bottom: 0;
+      }
+
+      code {
+        display: block;
+        background: #0f172a;
+        color: #a5f3fc;
+        font-family: "Fira Code", "Courier New", monospace;
+        font-size: 0.95rem;
+        padding: 1rem 1.25rem;
+        border-radius: 0.5rem;
+        margin: 0.75rem 0;
+        overflow-x: auto;
+        white-space: pre;
+      }
+
+      .note {
+        background: #1e3a5f;
+        border-left: 4px solid #38bdf8;
+        border-radius: 0 0.5rem 0.5rem 0;
+        padding: 0.9rem 1.2rem;
+        color: #bae6fd;
+        font-size: 0.92rem;
+        margin-top: 0.75rem;
+      }
+
+      .note strong {
+        color: #38bdf8;
+      }
+
+      .cheatsheet {
+        background: #1e293b;
+        border-radius: 1rem;
+        padding: 1.75rem 2rem;
+        margin-top: 2rem;
+      }
+
+      .cheatsheet h2 {
+        font-size: 1.3rem;
+        color: #f1f5f9;
+        margin-bottom: 1.25rem;
+        border-bottom: 1px solid #334155;
+        padding-bottom: 0.75rem;
+      }
+
+      .cheat-row {
+        display: flex;
+        gap: 1rem;
+        align-items: baseline;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #1e293b;
+      }
+
+      .cheat-cmd {
+        font-family: "Fira Code", "Courier New", monospace;
+        color: #a5f3fc;
+        font-size: 0.88rem;
+        min-width: 220px;
+        background: #0f172a;
+        padding: 0.2rem 0.6rem;
+        border-radius: 0.3rem;
+      }
+
+      .cheat-desc {
+        color: #94a3b8;
+        font-size: 0.9rem;
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 3rem;
+        color: #475569;
+        font-size: 0.85rem;
       }
     </style>
   </head>
   <body>
-    <div class="card">
-      <h1>¡Hola, Mundo!</h1>
-      <p>Bienvenido — espero que tengas un día increíble.</p>
+    <div class="container">
+
+      <header>
+        <h1>Git for Beginners</h1>
+        <p>Everything you need to start tracking and sharing your code.</p>
+      </header>
+
+      <!-- Step 1 -->
+      <div class="step">
+        <div class="step-number">Step 1</div>
+        <h2>What is Git?</h2>
+        <p>
+          Git is a version control system. It tracks every change you make to your files so you can go back in time, collaborate with others, and never lose your work.
+        </p>
+        <p>
+          Think of it like save points in a video game — you create a save point whenever you want, and you can always reload one if something goes wrong.
+        </p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step">
+        <div class="step-number">Step 2</div>
+        <h2>Start a new project</h2>
+        <p>
+          Navigate to your project folder in the terminal, then run:
+        </p>
+        <code>git init</code>
+        <p>
+          This creates a hidden <strong>.git</strong> folder that Git uses to track everything. You only do this once per project.
+        </p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step">
+        <div class="step-number">Step 3</div>
+        <h2>Check what has changed</h2>
+        <p>
+          Before saving anything, see the current state of your files:
+        </p>
+        <code>git status</code>
+        <p>
+          Files in red are changed but not yet staged. Files in green are staged and ready to commit.
+        </p>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="step">
+        <div class="step-number">Step 4</div>
+        <h2>Stage your changes</h2>
+        <p>
+          Staging means telling Git which changes to include in your next save point. Add a specific file:
+        </p>
+        <code>git add index.html</code>
+        <p>Or stage everything at once:</p>
+        <code>git add .</code>
+        <div class="note">
+          <strong>Tip:</strong> Use <code style="display:inline; padding: 0.1rem 0.4rem; font-size:0.85rem;">git add .</code> carefully — it stages all files including ones you may not want to commit.
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="step">
+        <div class="step-number">Step 5</div>
+        <h2>Commit your changes</h2>
+        <p>
+          A commit is your save point. Always include a short message describing what you changed:
+        </p>
+        <code>git commit -m "add homepage"</code>
+        <p>
+          Good commit messages are short and say <em>what</em> changed, not <em>how</em>. Examples:
+        </p>
+        <code>git commit -m "fix broken login button"
+git commit -m "add contact page"
+git commit -m "update nav colours"</code>
+      </div>
+
+      <!-- Step 6 -->
+      <div class="step">
+        <div class="step-number">Step 6</div>
+        <h2>Connect to GitHub</h2>
+        <p>
+          GitHub is a website that stores your code online. First create a new repository on GitHub, then link it to your local project:
+        </p>
+        <code>git remote add origin git@github.com:yourusername/your-repo.git</code>
+        <p>You only need to do this once. Replace the URL with your own repository URL.</p>
+      </div>
+
+      <!-- Step 7 -->
+      <div class="step">
+        <div class="step-number">Step 7</div>
+        <h2>Push your code to GitHub</h2>
+        <p>
+          Pushing sends your commits to GitHub so they are stored online and others can see them:
+        </p>
+        <code>git push -u origin main</code>
+        <p>
+          After the first push, you can just use:
+        </p>
+        <code>git push</code>
+      </div>
+
+      <!-- Step 8 -->
+      <div class="step">
+        <div class="step-number">Step 8</div>
+        <h2>Your everyday workflow</h2>
+        <p>Once your project is set up, this is all you do each time you make changes:</p>
+        <code>git add .
+git commit -m "describe what you changed"
+git push</code>
+        <p>That is it. Three commands to save and back up your work.</p>
+      </div>
+
+      <!-- Cheat sheet -->
+      <div class="cheatsheet">
+        <h2>Quick Reference</h2>
+        <div class="cheat-row">
+          <span class="cheat-cmd">git init</span>
+          <span class="cheat-desc">Start a new Git repository</span>
+        </div>
+        <div class="cheat-row">
+          <span class="cheat-cmd">git status</span>
+          <span class="cheat-desc">See what has changed</span>
+        </div>
+        <div class="cheat-row">
+          <span class="cheat-cmd">git add .</span>
+          <span class="cheat-desc">Stage all changes</span>
+        </div>
+        <div class="cheat-row">
+          <span class="cheat-cmd">git commit -m "message"</span>
+          <span class="cheat-desc">Save a snapshot with a message</span>
+        </div>
+        <div class="cheat-row">
+          <span class="cheat-cmd">git push</span>
+          <span class="cheat-desc">Upload commits to GitHub</span>
+        </div>
+        <div class="cheat-row">
+          <span class="cheat-cmd">git pull</span>
+          <span class="cheat-desc">Download latest changes from GitHub</span>
+        </div>
+        <div class="cheat-row">
+          <span class="cheat-cmd">git log --oneline</span>
+          <span class="cheat-desc">See a history of your commits</span>
+        </div>
+        <div class="cheat-row">
+          <span class="cheat-cmd">git diff</span>
+          <span class="cheat-desc">See exactly what lines changed</span>
+        </div>
+      </div>
+
+      <footer>
+        <p>Built for beginners &mdash; you've got this.</p>
+      </footer>
+
     </div>
   </body>
 </html>
